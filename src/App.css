@@ -23,6 +23,12 @@
   font-size: calc(10px + 2vmin);
   color: white;
 }
+.logo img {
+  height: 1vh; 
+  max-height: 60px; 
+  margin-bottom: 1vh;
+}
+
 
 .App-link {
   color: #61dafb;

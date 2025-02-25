@@ -1,0 +1,131 @@
+/* 🎨 Estilos generales */
+body {
+  font-family: 'Arial', sans-serif;
+  background: linear-gradient(135deg, #a8edea, #fed6e3);
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* 📌 Contenedor principal */
+.contenedor-login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
+
+/* 🏠 Caja del formulario */
+.caja-login {
+  background-color: white;
+  border-radius: 15px;
+  padding: 5vh 3vw;
+  box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  width: 90%;
+  max-width: 400px; 
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+/* 🎭 Animación de entrada */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* 📌 Logo *//* 📌 Logo */
+.logo img {
+  height: auto; 
+  max-height: 250px; /* Antes era 100px, ahora es más grande */
+}
+
+
+.logo h1 {
+  font-size: 2.5vh;
+  color: #333;
+  margin: 1vh 0;
+}
+
+/* 📝 Título */
+h2 {
+  font-size: 2.2vh;
+  color: #555;
+  margin: 2vh 0;
+}
+
+/* 🔤 Input */
+.grupo-input {
+  margin-bottom: 3vh;
+}
+
+.grupo-input input {
+  width: 100%;
+  padding: 1.5vh;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1.8vh;
+  outline: none;
+  transition: border-color 0.3s ease-in-out;
+}
+
+.grupo-input input:focus {
+  border-color: #2dc637;
+}
+
+/* 🔘 Botón */
+.boton-iniciar {
+  background: linear-gradient(90deg, #2dc637, #11bb17);
+  color: white;
+  border: none;
+  padding: 1.5vh;
+  font-size: 2vh;
+  border-radius: 8px;
+  cursor: pointer;
+  width: 100%;
+  transition: background 0.3s ease-in-out, transform 0.2s;
+}
+
+.boton-iniciar:hover {
+  background: linear-gradient(90deg, #21d569, #21d569);
+  transform: translateY(-3px);
+}
+
+.boton-iniciar:active {
+  transform: translateY(0);
+}
+
+/* 🔗 Link de registro */
+.register-link {
+  margin-top: 2vh;
+  font-size: 1.8vh;
+}
+
+/* 📱 Diseño responsivo */
+@media (max-width: 768px) {
+  .caja-login {
+    padding: 5vh 5vw;
+  }
+
+  .logo img {
+    height: 8vh; 
+  }
+
+  h2 {
+    font-size: 2vh;
+  }
+
+  .boton-iniciar {
+    font-size: 1.8vh;
+  }
+}
