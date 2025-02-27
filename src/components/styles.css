@@ -1,0 +1,208 @@
+/* Estilo Global */
+body {
+  font-family: 'Arial', sans-serif;
+  background: linear-gradient(135deg, #c2f0c2, #e6f7ff); /* Degradado verde y azul */
+  background-attachment: fixed;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+}
+
+/* Contenedor con efecto 3D verde en los lados */
+.container {
+  background: rgba(255, 255, 255, 0.9); /* Fondo blanco con leve transparencia */
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 
+    -6px 0 15px rgba(0, 255, 0, 0.6), /* Efecto 3D en el borde izquierdo */
+    6px 0 15px rgba(0, 255, 0, 0.6),  /* Efecto 3D en el borde derecho */
+    0 10px 30px rgba(0, 0, 0, 0.1); /* Sombra general */
+  width: 100%;
+  max-width: 500px;
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+}
+
+/* Estilo del Título */
+h2 {
+  text-align: center;
+  font-size: 30px;
+  color: #333;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+/* Estilos del formulario */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+input, select, button {
+  padding: 15px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: 2px solid #ddd;
+  outline: none;
+  width: 100%;
+  box-sizing: border-box;
+  transition: all 0.3s ease;
+}
+
+/* Input de texto con efecto moderno */
+input[type="text"] {
+  background: #f9f9f9;
+  border: 2px solid #ddd;
+  padding: 15px;
+  font-size: 16px;
+  border-radius: 8px;
+  outline: none;
+  transition: all 0.3s ease;
+  position: relative;
+  padding-left: 45px;
+  background-image: url('https://cdn-icons-png.flaticon.com/512/84/84380.png'); 
+  background-size: 20px;
+  background-position: 15px center;
+  background-repeat: no-repeat;
+}
+
+input[type="text"]:focus {
+  border-color: #4CAF50;
+  background-color: #e0f7e0;
+  box-shadow: 0 0 8px rgba(76, 175, 80, 0.6);
+  transform: scale(1.05);
+}
+
+input[type="text"]::placeholder {
+  color: #aaa;
+  font-style: italic;
+}
+
+/* Select con diseño moderno */
+select {
+  background: transparent;
+  color: #333;
+  font-weight: bold;
+  border: 2px solid #4CAF50;
+  padding: 15px;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  appearance: none;
+  padding-right: 40px;
+  background-image: url('https://cdn-icons-png.flaticon.com/512/25/25623.png');
+  background-size: 15px;
+  background-position: right 15px center;
+  background-repeat: no-repeat;
+}
+
+select:hover {
+  background: rgba(76, 175, 80, 0.1);
+}
+
+select:focus {
+  outline: none;
+  box-shadow: 0 0 10px rgba(76, 175, 80, 0.6);
+  transform: scale(1.05);
+}
+
+/* Estilo del texto "Estado" con una barra */
+.label-estado {
+  display: block;
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 5px;
+  padding-bottom: 5px;
+  border-bottom: 3px solid rgba(76, 175, 80, 0.5);
+  width: max-content;
+}
+
+/* Estilo del botón */
+button {
+  background-color: #4CAF50;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+button:hover {
+  background-color: #45a049;
+  transform: translateY(-2px);
+}
+
+button:active {
+  transform: translateY(1px);
+}
+
+/* Efecto de carga en el contenedor */
+.container:hover {
+  transform: scale(1.05);
+}
+
+/* Mensajes de error y éxito */
+.alert, .success {
+  padding: 12px;
+  border-radius: 8px;
+  font-size: 16px;
+  color: #fff;
+  margin-top: 20px;
+}
+
+.alert {
+  background-color: #f44336;
+}
+
+.success {
+  background-color: #4CAF50;
+}
+
+/* Estilo para el listado de muestras */
+ul {
+  margin-top: 20px;
+  list-style-type: none;
+  padding: 0;
+}
+
+ul li {
+  background-color: #e8f5e9;
+  padding: 15px;
+  margin-bottom: 12px;
+  border-radius: 8px;
+  font-size: 16px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+ul li strong {
+  color: #4CAF50;
+}
+
+/* Efectos de transición suaves */
+ul li:hover {
+  background-color: #d0f0d0;
+  cursor: pointer;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Animación para el formulario */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.container {
+  animation: fadeIn 0.6s ease-in-out;
+}
