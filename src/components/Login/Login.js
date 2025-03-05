@@ -2,36 +2,44 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import "./Login.css";
-import logo from "../assets/logo.png"; 
+import logo from "../../assets/logo.png";
 
 const Login = () => {
-  const [username, setUsername] = useState('');
+  const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
+  const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
   useEffect(() => {
-    // Limpiar estado cuando el componente se monta
-    setUsername('');
+    setEmail('');
     setPassword('');
     setError('');
   }, []);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setLoading(true);
 
+    // Validación opcional según requerimientos del nuevo API
     if (password.length > 10) {
       setError('⚠ La contraseña no puede tener más de 10 caracteres.');
+      setLoading(false);
       return;
     }
 
-    try {
-      const response = await axios.post('https://apis-09nf.onrender.com/usuarios/login', {
-        nombre_usuario: username,
-        contraseña: password,
-      });
+    console.log("📩 Enviando datos:", { email, password });
 
-      if (response.data.usuario) {
+    try {
+      const response = await axios.post(
+        'https://unificado-u.onrender.com/api/usuarios/login',
+        { email, password },
+        { headers: { "Content-Type": "application/json" } }
+      );
+
+      console.log("✅ Respuesta del backend:", response.data);
+
+      if (response.data.token) {
         setError('');
         localStorage.setItem('token', response.data.token);
         navigate('/home');
@@ -39,8 +47,23 @@ const Login = () => {
         setError('⚠ Credenciales inválidas');
       }
     } catch (error) {
-      setError('⚠ Error al iniciar sesión. Verifica tus datos.');
+      console.error(
+        "❌ Error en la solicitud:",
+        error.response ? error.response.data : error.message
+      );
+
+      if (error.response) {
+        // Se verifica si viene en error o message
+        setError(
+          error.response.data.message ||
+          error.response.data.error ||
+          '⚠ Error al iniciar sesión.'
+        );
+      } else {
+        setError('⚠ Error de conexión con el servidor.');
+      }
     }
+    setLoading(false);
   };
 
   return (
@@ -53,16 +76,17 @@ const Login = () => {
         <form onSubmit={handleSubmit} className="login-form">
           <h2>Iniciar sesión</h2>
           {error && <div className="error-message">{error}</div>}
+          {loading && <div className="loading-message">Cargando...</div>}
 
           <div className="grupo-input">
-            <label htmlFor="username">Nombre de usuario</label>
+            <label htmlFor="email">Correo electrónico</label>
             <input
-              type="text"
-              id="username"
-              value={username}
+              type="email"
+              id="email"
+              value={email}
               onChange={(e) => {
-                setUsername(e.target.value);
-                setError(''); 
+                setEmail(e.target.value.trim());
+                setError('');
               }}
               required
             />
@@ -76,13 +100,15 @@ const Login = () => {
               value={password}
               onChange={(e) => {
                 setPassword(e.target.value);
-                setError(''); 
+                setError('');
               }}
               required
             />
           </div>
 
-          <button type="submit" className="boton-iniciar">Iniciar sesión</button>
+          <button type="submit" className="boton-iniciar" disabled={loading}>
+            {loading ? "Iniciando..." : "Iniciar sesión"}
+          </button>
 
           <div className="register-link">
             ¿No tienes una cuenta?  

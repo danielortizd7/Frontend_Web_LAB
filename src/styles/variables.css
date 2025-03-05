@@ -1,0 +1,11 @@
+:root {
+    --primary-color: #2F80ED;         /* Azul principal */
+    --secondary-color: #56CCF2;       /* Azul claro para acentos */
+    --background-color: #F2F2F2;       /* Fondo claro para la app */
+    --texto-principal: #333333;        /* Texto principal */
+    --texto-secundario: #555555;
+    --borde-input: #cccccc;           /* Borde de inputs */
+    --borde-focus: #2F80ED;           /* Borde al enfocar inputs */
+    --gradient-primary: linear-gradient(135deg, #2F80ED, #56CCF2); /* Gradiente para botones */
+  }
+  

@@ -1,0 +1,79 @@
+/* 📌 Contenedor centrado en la pantalla */
+.config-container {
+    display: flex; /* Usa flexbox para centrar */
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+    height: 100vh; /* Ocupa toda la altura de la pantalla */
+  }
+  
+  /* 🔴 Estilo 1: Botón moderno con sombra */
+  .logout-button {
+    background: prymary-gradient; /* Degradado de rojo a naranja */
+    border: none; /* Sin borde */
+    color: white; /* Texto blanco */
+    padding: 12px 24px; /* Espaciado interno */
+    font-size: 18px; /* Tamaño del texto */
+    border-radius: 8px; /* Bordes redondeados */
+    cursor: pointer; /* Cambia el cursor al pasar por encima */
+    transition: all 0.3s ease-in-out; /* Suaviza las transiciones */
+    box-shadow: 0 4px 10px rgba(255, 75, 43, 0.4); /* Sombra alrededor del botón */
+  }
+  
+  /* Efecto al pasar el mouse: agranda el botón y aumenta la sombra */
+  .logout-button:hover {
+    transform: scale(1.05); /* Aumenta el tamaño un 5% */
+    box-shadow: 0 6px 15px rgba(146, 127, 123, 0.6); /* Sombra más pronunciada */
+  }
+  
+  /* 🔵 Estilo 2: Botón con efecto de onda al hacer clic */
+  .logout-button {
+    background-color: #007bff; /* Color azul */
+    color: white; /* Texto blanco */
+    border: none; /* Sin borde */
+    padding: 12px 24px; /* Espaciado interno */
+    font-size: 18px; /* Tamaño del texto */
+    border-radius: 50px; /* Bordes muy redondeados (botón tipo píldora) */
+    cursor: pointer; /* Cambia el cursor al pasar por encima */
+    position: relative; /* Necesario para el efecto de onda */
+    overflow: hidden; /* Evita que la animación de onda se desborde */
+    transition: background-color 0.3s ease; /* Suaviza el cambio de color */
+  }
+  
+  /* Cambio de color al pasar el mouse */
+  .logout-button:hover {
+    background-color: #0056b3; /* Azul más oscuro */
+  }
+  
+  /* Efecto de onda al hacer clic */
+  .logout-button:active::after {
+    content: ""; /* Se crea un elemento vacío */
+    position: absolute; /* Se posiciona de forma absoluta dentro del botón */
+    width: 100px; /* Tamaño de la onda */
+    height: 100px;
+    background: rgba(255, 255, 255, 0.4); /* Color blanco semi-transparente */
+    border-radius: 50%; /* Forma circular */
+    transform: scale(0); /* Empieza pequeño */
+    animation: ripple 0.6s linear; /* Llama la animación */
+  }
+  
+  /* Definición de la animación de onda */
+  @keyframes ripple {
+    to {
+      transform: scale(3); /* Aumenta el tamaño 3 veces */
+      opacity: 0; /* Se desvanece */
+    }
+  }
+  
+
+  
+  /* Cambio de color al pasar el mouse */
+  .logout-button:hover {
+    background-color: #218838; /* Verde más oscuro */
+  }
+  
+  /* Efecto de presión al hacer clic */
+  .logout-button:active {
+    transform: translateY(4px); /* Mueve el botón hacia abajo */
+    box-shadow: 0 2px 0 #1e7e34; /* Reduce la sombra para el efecto presionado */
+  }
+  

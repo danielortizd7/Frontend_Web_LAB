@@ -1,0 +1,72 @@
+/* ============================== */
+/* 📌 Contenedor principal para Gestión de Usuarios */
+/* ============================== */
+.gestion-usuarios-container {
+  display: flex;                   /* Alineación flexible */
+  flex-direction: column;          /* Apilar elementos en columna */
+  justify-content: center;         /* Centrar verticalmente */
+  align-items: center;             /* Centrar horizontalmente */
+  height: 100vh;                   /* Toda la pantalla */
+  width: 100%;
+  background-color: var(--background-color); /* Fondo unificado con la app */
+  padding: 40px;                   /* Espaciado general */
+}
+
+/* 📌 Contenedor de los botones */
+.gestion-usuarios-buttons {
+  display: flex;
+  flex-direction: column;           /* Acomoda los botones en columna */
+  gap: 15px;                        /* Espacio entre botones */
+  margin-top: 20px;
+  width: 100%;
+  max-width: 400px;                 /* Máximo ancho de los botones */
+}
+
+/* 📌 Botones */
+.btn-usuarios {
+  padding: 15px 30px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  border: none;
+  border-radius: 8px;               /* Bordes más redondeados */
+  background: var(--primary-color); /* Usa color primario */
+  color: white;
+  transition: all 0.3s ease-in-out;
+  width: 100%;                      /* Ocupar todo el ancho disponible */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px; /* Espaciado entre icono y texto */
+}
+
+/* 📌 Efecto hover */
+.btn-usuarios:hover {
+  background: var(--secondary-color);
+  transform: translateY(-3px);       /* Efecto de elevación */
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* 📌 Botón de regresar */
+.btn-back {
+  position: absolute;
+  top: 30px;
+  left: 50px;
+  background-color: #8895a2;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 24px;
+  transition: all 0.3s ease-in-out;
+}
+
+/* 📌 Efecto hover del botón de regreso */
+.btn-back:hover {
+  background-color: var(--primary-color);
+  transform: scale(1.1);
+}

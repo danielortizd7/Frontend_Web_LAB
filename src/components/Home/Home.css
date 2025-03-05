@@ -1,0 +1,108 @@
+/* ============================= */
+/*  CONTENEDOR PRINCIPAL         */
+/* ============================= */
+.home-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  background-color: #f8f9fa;
+}
+
+/* ============================= */
+/*  MENÚ SUPERIOR FIJO           */
+/* ============================= */
+.menu-bar {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  background: linear-gradient(135deg, #2F80ED, #56CCF2);
+  padding: 15px 0;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+}
+
+.menu-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: white;
+  border-radius: 8px;
+  padding: 12px 18px;
+  color: #2F80ED;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+  border: none;
+}
+
+.menu-item:hover {
+  background-color: #e0f7ff;
+  transform: scale(1.1);
+}
+
+/* ============================= */
+/*  CONTENIDO PRINCIPAL          */
+/* ============================= */
+.home-content {
+  margin-top: 80px; /* Para evitar que el contenido quede debajo del menú */
+  text-align: center;
+  width: 100%;
+}
+
+h1 {
+  font-size: 28px;
+  color: #2F80ED;
+  margin-bottom: 20px;
+}
+
+/* ============================= */
+/*  WIDGETS                      */
+/* ============================= */
+.widgets-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.widget {
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.widget:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.widget-icon {
+  font-size: 40px;
+  color: #2F80ED;
+}
+
+/* ============================= */
+/*  RESPONSIVE DESIGN            */
+/* ============================= */
+@media (max-width: 768px) {
+  .menu-bar {
+    flex-wrap: wrap;
+  }
+
+  .widgets-container {
+    flex-direction: column;
+    align-items: center;
+  }
+}

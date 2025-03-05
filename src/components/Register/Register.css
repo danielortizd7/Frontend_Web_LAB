@@ -1,0 +1,160 @@
+/* ============================= */
+/*   CONTENEDOR PRINCIPAL        */
+/* ============================= */
+.register-container {
+  display: flex; /* Usa flexbox para centrar el contenido */
+  justify-content: center; /* Centra horizontalmente */
+  align-items: center; /* Centra verticalmente */
+  min-height: 100vh; /* Ocupa toda la pantalla */
+  background-color: #f2f2f2; /* Fondo gris claro */
+  padding: 40px;
+}
+
+/* ============================= */
+/*    FORMULARIO DE REGISTRO     */
+/* ============================= */
+.register-form {
+  background: #ffffff;
+  padding: 3.5rem 4rem; /* Espaciado interno más amplio */
+  border-radius: 20px; /* Bordes más suaves */
+  border: 3px solid #2F80ED; /* Borde azul */
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2); /* Sombra más elegante */
+  width: 100%;
+  max-width: 500px; /* Ancho más moderado */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center; /* Asegura que todo dentro esté centrado */
+}
+
+/* ============================= */
+/*        LOGO REGISTRO          */
+/* ============================= */
+.logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 1.5rem;
+}
+
+.logo img {
+  max-height: 150px; /* Logo más grande */
+  max-width: 100%;
+  display: block;
+  margin: 0 auto; /* Centra la imagen manualmente */
+}
+
+/* ============================= */
+/*       TÍTULO REGISTRO         */
+/* ============================= */
+.register-form h2 {
+  color: var(--primary-color);
+  margin-bottom: 1.8rem;
+  font-size: 2.2rem; /* Ajuste del tamaño */
+  font-weight: bold;
+}
+
+/* ============================= */
+/*       MENSAJES DE ERROR       */
+/* ============================= */
+.error-message, .success-message {
+  padding: 1rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  width: 100%;
+  text-align: center;
+}
+
+/* ============================= */
+/*      CAMPOS DE ENTRADA        */
+/* ============================= */
+.grupo-input {
+  margin-bottom: 1.3rem; /* Espaciado uniforme */
+  width: 100%;
+  text-align: left; /* Asegura que los labels estén alineados */
+}
+
+/* Estilo de los labels */
+.grupo-input label {
+  font-size: 1rem; /* Tamaño más grande */
+  font-weight: bold;
+  margin-bottom: 5px;
+  display: block;
+}
+
+/* Estilo para inputs, select y textarea */
+.grupo-input input,
+.grupo-input select,
+.grupo-input textarea {
+  width: 100%; /* Ocupa todo el espacio disponible */
+  padding: 0.9rem;
+  font-size: 1rem;
+  border: 2px solid var(--borde-input);
+  border-radius: 8px;
+  transition: border-color 0.3s ease;
+}
+
+/* Efecto de foco en los campos */
+.grupo-input input:focus,
+.grupo-input select:focus,
+.grupo-input textarea:focus {
+  border-color: var(--primary-color);
+  outline: none;
+}
+
+/* ============================= */
+/*   BOTÓN REGISTRARSE           */
+/* ============================= */
+.register-form button[type="submit"] {
+  width: 100%;
+  padding: 1rem;
+  font-size: 1.1rem;
+  font-weight: bold;
+  background: var(--gradient-primary);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  color: white;
+  margin-top: 1rem;
+}
+
+.register-form button[type="submit"]:hover {
+  background: var(--primary-color);
+}
+
+/* ============================= */
+/*   BOTÓN VOLVER Y ENLACES      */
+/* ============================= */
+.boton-volver {
+  width: 100%;
+  padding: 1rem;
+  font-size: 1rem;
+  border-radius: 8px;
+  background: #ccc;
+  cursor: pointer;
+  margin-top: 1rem;
+}
+
+.boton-volver:hover {
+  background: #b0b0b0;
+}
+
+/* ============================= */
+/*       ENLACE LOGIN            */
+/* ============================= */
+.login-link {
+  text-align: center;
+  font-size: 1rem;
+  margin-top: 1rem;
+}
+
+.login-link span {
+  color: #2F80ED;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.login-link span:hover {
+  text-decoration: underline;
+}
