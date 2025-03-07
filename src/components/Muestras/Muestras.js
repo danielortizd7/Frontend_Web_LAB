@@ -11,23 +11,20 @@ const Muestras = () => {
   const [error, setError] = useState(null);
   const [search, setSearch] = useState("");
   const [paginaActual, setPaginaActual] = useState(1);
-  const [renderizar, setRenderizar] = useState(false); // Estado para forzar render
+  const [renderizar, setRenderizar] = useState(false); 
   const muestrasPorPagina = 10;
   const navigate = useNavigate();
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        // Obtener las muestras
         const muestrasResponse = await fetch("https://backendregistromuestra.onrender.com/muestras");
         if (!muestrasResponse.ok) throw new Error("Error al obtener las muestras");
         const muestrasData = await muestrasResponse.json();
 
-        // Obtener token del localStorage
         const token = localStorage.getItem("token");
         if (!token) throw new Error("Token no encontrado en localStorage");
 
-        // Solicitar usuarios incluyendo el token en el encabezado Authorization
         const usuariosResponse = await fetch("https://unificado-u.onrender.com/api/usuarios", {
           headers: {
             "Authorization": `Bearer ${token}`
@@ -36,7 +33,6 @@ const Muestras = () => {
         if (!usuariosResponse.ok) throw new Error("Error al obtener los usuarios");
         const usuariosData = await usuariosResponse.json();
 
-        // Combinar las muestras con los datos de los usuarios
         const muestrasCompletas = muestrasData.map((muestra) => {
           const usuario = usuariosData.find((user) => user.documento === muestra.documento);
           return {
@@ -104,30 +100,27 @@ const Muestras = () => {
     setPaginaActual(1);
   };
 
-  // Filtrar muestras
   const muestrasFiltradas = muestras.filter((muestra) =>
     muestra.nombreCliente.toLowerCase().includes(search.toLowerCase()) ||
     String(muestra.id_muestra).includes(search)
   );
 
-  // Calcular paginación
   const totalPaginas = Math.ceil(muestrasFiltradas.length / muestrasPorPagina);
   const indexUltimaMuestra = paginaActual * muestrasPorPagina;
   const indexPrimeraMuestra = indexUltimaMuestra - muestrasPorPagina;
   const muestrasPaginadas = muestrasFiltradas.slice(indexPrimeraMuestra, indexUltimaMuestra);
 
-  // Manejadores de paginación
   const handlePaginaSiguiente = () => {
     if (paginaActual < totalPaginas) {
       setPaginaActual((prev) => prev + 1);
-      setRenderizar((prev) => !prev); // Forzar render
+      setRenderizar((prev) => !prev); 
     }
   };
 
   const handlePaginaAnterior = () => {
     if (paginaActual > 1) {
       setPaginaActual((prev) => prev - 1);
-      setRenderizar((prev) => !prev); // Forzar render
+      setRenderizar((prev) => !prev); 
     }
   };
 
@@ -184,7 +177,7 @@ const Muestras = () => {
         </table>
       </div>
 
-      {/* Controles de paginación */}
+      {}
       <div className="paginacion">
         <button disabled={paginaActual === 1} onClick={handlePaginaAnterior}>
           Anterior

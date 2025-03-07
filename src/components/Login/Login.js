@@ -21,7 +21,6 @@ const Login = () => {
     e.preventDefault();
     setLoading(true);
 
-    // Validación opcional según requerimientos del nuevo API
     if (password.length > 10) {
       setError('⚠ La contraseña no puede tener más de 10 caracteres.');
       setLoading(false);
@@ -53,7 +52,6 @@ const Login = () => {
       );
 
       if (error.response) {
-        // Se verifica si viene en error o message
         setError(
           error.response.data.message ||
           error.response.data.error ||

@@ -1,83 +1,63 @@
-/* ============================= */
-/*   CONTENEDOR PRINCIPAL LOGIN   */
-/* ============================= */
 .contenedor-login {
-  display: flex; /* Alinea el contenido en el centro */
-  justify-content: center; /* Centra horizontalmente */
-  align-items: center; /* Centra verticalmente */
-  min-height: 100vh; /* Ocupa toda la pantalla */
+  display: flex; 
+  justify-content: center; 
+  align-items: center; 
+  min-height: 100vh; 
   background-color: #f2f2f2;
   padding: 20px;
 }
 
-/* ============================= */
-/*       CAJA DEL FORMULARIO     */
-/* ============================= */
 .caja-login {
   background: #fff;
-  padding: 3rem; /* Espaciado interno */
-  border-radius: 20px; /* Bordes redondeados */
-  border: 3px solid #2F80ED; /* Borde azul */
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Sombra suave */
+  padding: 3rem; 
+  border-radius: 20px; 
+  border: 3px solid #2F80ED; 
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); 
   width: 100%;
-  max-width: 420px; /* Aumentado para más espacio */
-  text-align: center; /* Asegura que el contenido interno se centre */
+  max-width: 420px; 
+  text-align: center; 
 }
 
-/* ============================= */
-/*           LOGO LOGIN          */
-/* ============================= */
 .logo {
   width: 100%;
   margin-bottom: 1.5rem;
-  text-align: center; /* Asegura que el contenido del div esté centrado */
+  text-align: center; 
 }
 
 .logo img {
-  width: 140px; /* Ancho fijo para evitar que crezca demasiado */
-  height: auto; /* Mantiene la proporción */
-  display: inline-block; /* Para que respete la alineación manual */
+  width: 140px; 
+  height: auto; 
+  display: inline-block;
   max-width: 200%;
 }
 
-/* Si necesitas moverlo manualmente */
-/* Puedes ajustar estos valores */
 .logo {
   margin-left: auto;
   margin-right: auto;
-  margin-top: 10px; /* Baja el logo manualmente */
-  margin-bottom: 20px; /* Ajusta la separación */
+  margin-top: 10px; 
+  margin-bottom: 20px; 
 }
 
-/* ============================= */
-/*         FORMULARIO LOGIN      */
-/* ============================= */
 .login-form {
   display: flex;
   flex-direction: column;
 }
 
-/* ============================= */
-/*        TÍTULO DEL LOGIN       */
-/* ============================= */
 .login-form h2 {
   color: var(--primary-color);
-  font-size: 1.5rem; /* Título más grande */
+  font-size: 1.5rem; 
   margin-bottom: 1.5rem;
-  text-align: center; /* Asegura que esté centrado */
+  text-align: center; 
 }
 
-/* ============================= */
-/*      CAMPOS DE TEXTO LOGIN    */
-/* ============================= */
 .grupo-input {
-  margin-bottom: 1rem; /* Espaciado entre inputs */
+  margin-bottom: 1rem; 
 }
 
 .grupo-input label {
-  font-size: 1.1rem; /* Fuente más grande */
+  font-size: 1.1rem;
   font-weight: bold;
-  text-align: left; /* Puedes cambiar a center si prefieres */
+  text-align: left; 
 }
 
 .grupo-input input {
@@ -88,9 +68,6 @@
   font-size: 1rem;
 }
 
-/* ============================= */
-/*       BOTÓN INICIAR SESIÓN    */
-/* ============================= */
 .boton-iniciar {
   width: 100%;
   padding: 1rem;
@@ -103,9 +80,6 @@
   background: var(--primary-color);
 }
 
-/* ============================= */
-/*       ENLACE REGISTRARSE      */
-/* ============================= */
 .register-link {
   text-align: center;
   margin-top: 1rem;

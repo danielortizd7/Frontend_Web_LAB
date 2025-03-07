@@ -1,216 +1,191 @@
-/* ============================= */
-/*  CONTENEDOR PRINCIPAL         */
-/* ============================= */
 .muestras-container {
-    text-align: center; /* Centra el contenido */
-    padding: 20px; /* Espaciado interno */
-    font-family: Arial, sans-serif; /* Fuente predeterminada */
-    width: 100vw; /* Ocupa todo el ancho de la ventana */
-    height: 100vh; /* Ocupa toda la altura de la ventana */
-    display: flex; /* Asegura que el contenido se mantenga alineado */
-    flex-direction: column; /* Organiza los elementos en columna */
-    justify-content: space-between; /* Mantiene los elementos organizados */
+    text-align: center; 
+    padding: 20px; 
+    font-family: Arial, sans-serif;
+    width: 100vw; 
+    height: 100vh; 
+    display: flex; 
+    flex-direction: column; 
+    justify-content: space-between; 
     padding-top:80px;
 }
 
-/* ============================= */
-/*  ENCABEZADO FIJO DE LA TABLA  */
-/* ============================= */
+
 thead {
-    position: sticky; /* Mantiene el encabezado visible al hacer scroll */
-    top: 0; /* Se fija en la parte superior */
-    background: var(--primary-color); /* Color de fondo */
-    z-index: 10; /* Asegura que esté sobre otras capas */
+    position: sticky; 
+    top: 0; 
+    background: var(--primary-color); 
+    z-index: 10; 
 }
 
 /* ============================= */
 /*  BUSCADOR Y FILTROS           */
 /* ============================= */
 .filtros {
-    display: flex; /* Alineación en fila */
-    gap: 15px; /* Espaciado entre elementos */
-    justify-content: center; /* Centra los filtros */
-    margin-bottom: 20px; /* Espacio debajo */
+    display: flex; 
+    gap: 15px; 
+    justify-content: center; 
+    margin-bottom: 20px; 
 }
 
 .filtros input {
-    padding: 8px; /* Espaciado interno corregido */
-    font-size: 14px; /* Tamaño de fuente */
-    border: 1px solid #ddd; /* Borde gris */
-    border-radius: 4px; /* Bordes redondeados */
-    background-color: #f9f9f9; /* Fondo gris claro */
-    width: 200px; /* Ancho fijo */
+    padding: 8px; 
+    font-size: 14px; 
+    border: 1px solid #ddd; 
+    border-radius: 4px; 
+    background-color: #f9f9f9; 
+    width: 200px; 
 }
 
-/* ============================= */
-/*  TABLA Y ESTILOS GENERALES    */
-/* ============================= */
+
 .tabla-scroll {
-    flex-grow: 1; /* La tabla ocupará el espacio restante */
-    overflow-y: auto; /* Permite desplazamiento vertical */
-    border: 1px solid #ccc; /* Borde gris */
-    background: white; /* Fondo blanco */
-    border-radius: 10px; /* Bordes redondeados */
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Sombra */
-    min-height: 60vh; /* Mantiene una altura mínima */
+    flex-grow: 1; 
+    overflow-y: auto; 
+    border: 1px solid #ccc; 
+    background: white; 
+    border-radius: 10px; 
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); 
+    min-height: 60vh; 
 }
 
 table {
-    width: 100%; /* La tabla ocupa todo el ancho disponible */
-    border-collapse: collapse; /* Une los bordes de las celdas */
+    width: 100%; 
+    border-collapse: collapse; 
 }
 
 th, td {
-    padding: 14px; /* Espaciado interno */
-    text-align: left; /* Alineación de texto */
-    border-bottom: 1px solid #ddd; /* Línea divisoria */
+    padding: 14px; 
+    text-align: left; 
+    border-bottom: 1px solid #ddd; 
 }
 
-/* ============================= */
-/*  ESTILOS DEL ENCABEZADO       */
-/* ============================= */
+
 th {
-    background: var(--primary-color); /* Color de encabezado */
-    color: white; /* Texto blanco */
-    font-size: 16px; /* Tamaño de fuente */
+    background: var(--primary-color);
+    color: white; 
+    font-size: 16px; 
 }
 
-/* ============================= */
-/*  ESTILOS DE LAS FILAS         */
-/* ============================= */
+
 tr:nth-child(even) {
-    background-color: #f4f4f9; /* Color de fondo alterno */
+    background-color: #f4f4f9;
 }
 
 tr:hover {
-    background-color: #e0e0f5; /* Cambio de color al pasar el mouse */
-    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2); /* Sombra */
+    background-color: #e0e0f5; 
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2); 
 }
 
-/* ============================= */
-/*  BOTÓN DE GENERAR PDF         */
-/* ============================= */
+
 .btn-pdf {
-    background-color: #d32f2f; /* Rojo oscuro */
-    color: white; /* Texto blanco */
-    border: none; /* Sin bordes */
-    padding: 8px 12px; /* Espaciado interno */
-    font-size: 14px; /* Tamaño de fuente */
-    cursor: pointer; /* Cursor tipo puntero */
-    border-radius: 5px; /* Bordes redondeados */
-    transition: background-color 0.3s ease; /* Transición suave */
+    background-color: #d32f2f; 
+    color: white; 
+    border: none; 
+    padding: 8px 12px; 
+    font-size: 14px; 
+    cursor: pointer; 
+    border-radius: 5px; 
+    transition: background-color 0.3s ease; 
 }
 
 .btn-pdf:hover {
-    background-color: #b71c1c; /* Cambio de color al pasar el mouse */
+    background-color: #b71c1c; 
 }
 
-/* ============================= */
-/*  PAGINACIÓN                   */
-/* ============================= */
+
 .paginacion {
-    display: flex; /* Asegura que los botones estén en línea */
-    justify-content: center; /* Centra los botones */
-    align-items: center; /* Alinea verticalmente */
-    margin-top: 15px; /* Espaciado superior */
-    padding: 10px 0; /* Espaciado interno */
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    margin-top: 15px; 
+    padding: 10px 0; 
 }
 
 .paginacion button {
-    background: linear-gradient(135deg, #4a90e2, #357ab7); /* Degradado azul */
-    color: white; /* Texto blanco */
-    border: none; /* Sin bordes */
-    padding: 8px 12px; /* Espaciado interno */
-    margin: 0 5px; /* Espacio entre botones */
-    border-radius: 5px; /* Bordes redondeados */
-    font-size: 14px; /* Tamaño de fuente */
-    cursor: pointer; /* Cursor tipo puntero */
+    background: linear-gradient(135deg, #4a90e2, #357ab7); 
+    color: white; 
+    border: none; 
+    padding: 8px 12px; 
+    margin: 0 5px; 
+    border-radius: 5px; 
+    font-size: 14px; 
+    cursor: pointer; 
 }
 
 .paginacion button:hover {
-    background: linear-gradient(135deg, #357ab7, #2b5d8f); /* Cambio de color */
+    background: linear-gradient(135deg, #357ab7, #2b5d8f); 
 }
 
 .paginacion button:disabled {
-    background: #b0bec5; /* Gris desactivado */
-    cursor: not-allowed; /* Cursor deshabilitado */
+    background: #b0bec5;
+    cursor: not-allowed; 
 }
 
 .paginacion span {
-    font-size: 14px; /* Tamaño de fuente */
-    font-weight: bold; /* Texto en negrita */
-    color: #555; /* Color gris oscuro */
-    margin: 0 10px; /* Espacio entre elementos */
+    font-size: 14px; 
+    font-weight: bold; 
+    color: #555; 
+    margin: 0 10px; 
 }
 
-/* ============================= */
-/*  ESTILOS PARA LOS BOTONES EN LA TABLA */
-/* ============================= */
+
 .btn-pdf, .btn-preview {
-    background-color: #d32f2f; /* Rojo oscuro */
-    color: white; /* Texto blanco */
-    border: none; /* Sin bordes */
-    padding: 8px 12px; /* Espaciado interno */
-    font-size: 14px; /* Tamaño de fuente */
-    cursor: pointer; /* Cursor tipo puntero */
-    border-radius: 5px; /* Bordes redondeados */
-    transition: background-color 0.3s ease; /* Transición suave */
-    margin: 5px 10px; /* Aumenta la separación entre los botones */
+    background-color: #d32f2f; 
+    color: white; 
+    border: none; 
+    padding: 8px 12px; 
+    font-size: 14px; 
+    cursor: pointer; 
+    border-radius: 5px; 
+    transition: background-color 0.3s ease; 
+    margin: 5px 10px; 
 }
 
 .btn-preview {
-    background-color: #357ab7; /* Azul para diferenciar */
+    background-color: #357ab7; 
 }
 
 .btn-pdf:hover {
-    background-color: #b71c1c; /* Cambio de color al pasar el mouse */
+    background-color: #b71c1c;
 }
 
 .btn-preview:hover {
-    background-color: #285a8e; /* Azul más oscuro al pasar el mouse */
+    background-color: #285a8e; 
 }
 
 
 
-/* ============================= */
-/*  ENCABEZADO FIJO DE LA TABLA  */
-/* ============================= */
+
 thead {
-    position: sticky; /* Mantiene el encabezado visible al hacer scroll */
-    top: 0; /* Se fija en la parte superior */
-    background: var(--primary-color); /* Color de fondo */
-    z-index: 10; /* Asegura que esté sobre otras capas */
+    position: sticky; 
+    top: 0; 
+    background: var(--primary-color); 
+    z-index: 10; 
 }
 
-/* ============================= */
-/*  ESTILOS DEL ENCABEZADO       */
-/* ============================= */
+
 th {
-    background: var(--primary-color); /* Color del encabezado */
-    color: white; /* Texto blanco */
-    font-size: 16px; /* Tamaño de fuente */
-    text-align: center; /* Centra el texto */
-    padding: 12px; /* Espaciado interno */
-    white-space: nowrap; /* Evita que el texto se divida en varias líneas */
+    background: var(--primary-color); 
+    color: white; 
+    font-size: 16px; 
+    text-align: center; 
+    padding: 12px; 
+    white-space: nowrap; 
 }
 
-/* ============================= */
-/*  ESTILOS DE LAS CELDAS        */
-/* ============================= */
+
 td {
-    min-width: 150px; /* Establece un ancho mínimo para cada celda */
-    height: 50px; /* Mantiene una altura fija para todas las filas */
-    text-align: center; /* Centra el contenido dentro de la celda */
-    vertical-align: middle; /* Asegura que el texto quede alineado verticalmente */
-    white-space: nowrap; /* Evita que el contenido salte de línea */
+    min-width: 150px; 
+    height: 50px; 
+    text-align: center; 
+    vertical-align: middle; 
+    white-space: nowrap; 
 }
 
-/* ============================= */
-/*  CORRECCIÓN DE CELDAS VACÍAS  */
-/* ============================= */
+
 td:empty::before {
-    content: "-"; /* Muestra un guion si la celda está vacía */
-    color: gray; /* Da un color más tenue para diferenciarlo */
+    content: "-"; 
+    color: gray; 
 }
 
 

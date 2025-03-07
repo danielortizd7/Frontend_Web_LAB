@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import "./Configuracion.css"; // Importa el CSS
+import "./Configuracion.css"; 
 import { FaHome } from "react-icons/fa";
 
 
@@ -9,8 +9,8 @@ const Configuracion = () => {
   
 
   const handleLogout = () => {
-    localStorage.removeItem("token"); // Elimina el token de sesión
-    navigate("/login"); // Redirige al login
+    localStorage.removeItem("token"); 
+    navigate("/login"); 
   };
   
 

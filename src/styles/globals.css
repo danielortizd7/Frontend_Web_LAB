@@ -1,21 +1,18 @@
 /* globals.css */
 
-/* Reset básico */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
   }
   
-  /* Fuente base y colores generales */
   body {
     font-family: 'Arial', sans-serif;
-    background-color: var(--background-color); /* Utiliza la variable que definiste en variables.css */
+    background-color: var(--background-color); 
     color: var(--texto-principal);
     line-height: 1.6;
   }
   
-  /* Enlaces */
   a {
     text-decoration: none;
     color: var(--secondary-color);
@@ -26,7 +23,6 @@
     color: var(--primary-color);
   }
   
-  /* Botones */
   button {
     cursor: pointer;
     border: none;
@@ -42,13 +38,11 @@
     background: var(--gradient-primary);
   }
   
-  /* Imágenes */
   img {
     max-width: 35%;
     height: auto;
   }
   
-  /* Clases de utilidad */
   .shadow {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   }
@@ -57,7 +51,6 @@
     border-radius: 8px;
   }
   
-  /* Estilos para inputs */
   input, select, textarea {
     padding: 0.5em;
     border: 1px solid var(--borde-input);
@@ -71,12 +64,10 @@
     outline: none;
   }
   .menu-item img {
-    width: 500px;   /* Ajusta al tamaño que quieras */
-    height: 50px;  /* Mantén la proporción */
+    width: 500px;   
+    height: 50px;  
   }
-  /* ============================= */
-/*  BOTÓN DE REGRESO FIJO (GLOBAL) */
-/* ============================= */
+ 
 .btn-back {
   position: fixed;
   top: 20px;
@@ -93,7 +84,7 @@
   cursor: pointer;
   font-size: 28px;
   transition: all 0.3s ease;
-  z-index: 1000; /* Para asegurarse de que esté sobre otros elementos */
+  z-index: 1000; 
 }
 
 .btn-back:hover {

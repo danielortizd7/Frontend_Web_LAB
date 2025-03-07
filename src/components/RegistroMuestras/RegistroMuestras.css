@@ -1,4 +1,3 @@
-/* Contenedor principal */
 .registro-container {
   display: flex;
   justify-content: center;
@@ -6,7 +5,6 @@
   height: 100vh;
 }
 
-/* Tarjeta del formulario */
 .registro-card {
   background: #fff;
   padding: 20px;
@@ -16,7 +14,6 @@
   max-width: 600px;
 }
 
-/* Centrar el logo y hacerlo más grande */
 .header {
   text-align: center;
   display: flex;
@@ -27,13 +24,12 @@
 }
 
 .logo {
-  max-width: 200px; /* Aumenta el tamaño del logo */
+  max-width: 200px; 
   width: 100%;
   height: auto;
 }
 
 
-/* Formulario */
 .registro-form {
   display: flex;
   flex-direction: column;
@@ -45,7 +41,6 @@
   flex-direction: column;
 }
 
-/* Contenedor con scroll para los análisis */
 .analisis-container {
   max-height: 250px;
   overflow-y: auto;
@@ -54,7 +49,6 @@
   padding: 10px;
 }
 
-/* Diseño en celdas */
 .analisis-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
@@ -62,7 +56,6 @@
   padding: 5px;
 }
 
-/* Estilo de cada celda */
 .analisis-item {
   display: flex;
   align-items: center;
@@ -76,24 +69,20 @@
   background: white;
 }
 
-/* Ocultar checkbox */
 .analisis-item input {
   display: none;
 }
 
-/* Cuando se selecciona */
 .analisis-item.seleccionado {
   background: #2F80ED;
   color: white;
   border-color: #2F80ED;
 }
 
-/* Hover */
 .analisis-item:hover {
   background: #e0e0e0;
 }
 
-/* Botón de registro */
 .btn-submit {
   padding: 12px;
   background: #2F80ED;
@@ -107,7 +96,6 @@
   background: #1e60d1;
 }
 
-/* Scroll personalizable */
 .analisis-container::-webkit-scrollbar {
   width: 8px;
 }
@@ -121,15 +109,14 @@
   background: #f1f1f1;
 }
 
-/* Botón Validar */
 .btn-validar {
   padding: 12px;
-  background: #2F80ED; /* Color azul */
+  background: #2F80ED; 
   color: white;
   border: none;
   border-radius: 6px;
   cursor: pointer;
-  margin-left: 10px; /* Separa el botón del input */
+  margin-left: 10px; 
 }
 
 .btn-validar:hover {
@@ -137,15 +124,14 @@
 }
 
 
-/* Botón Registrar Usuario */
 .btn-registrar-usuario {
   padding: 12px;
-  background: #F44336; /* Color rojo */
+  background: #F44336; 
   color: white;
   border: none;
   border-radius: 6px;
   cursor: pointer;
-  margin-left: 10px; /* Espacio a la izquierda */
+  margin-left: 10px; 
 }
 
 .btn-registrar-usuario:hover {

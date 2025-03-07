@@ -1,30 +1,27 @@
-/* CONTENEDOR PRINCIPAL - OCUPA TODA LA PANTALLA */
 .usuarios-container {
   display: flex;
   flex-direction: column;
   background-color: #f2f2f2;
-  height: 100vh; /* Ocupa toda la altura de la pantalla */
-  width: 100vw; /* Ocupa toda la anchura de la pantalla */
+  height: 100vh; 
+  width: 100vw; 
   padding: 20px;
   padding-top: 110px;
   font-family: Arial, sans-serif;
 }
 
-/* CONTENEDOR DE USUARIOS (TABLA + FILTROS) */
 .usuarios-registrados-container {
   display: flex;
-  flex-grow: 1; /* Permite que se expanda ocupando el espacio restante */
+  flex-grow: 1; 
   width: 100%;
-  height: calc(100vh - 80px); /* Se ajusta según el alto disponible */
+  height: calc(100vh - 80px); 
   margin: 0 auto;
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-  align-items: center; /* Agregado */
-  justify-content: center; /* Agregado */
+  align-items: center; 
+  justify-content: center; 
 }
 
-/* SIDEBAR (FILTROS) */
 .sidebar {
   width: 250px;
   background: #ffffff;
@@ -34,19 +31,17 @@
   flex-direction: column;
   gap: 70px;
   text-align: center;
-  height: 100%; /* Ocupa toda la altura disponible */
+  height: 100%; 
 }
 
-/* CONTENIDO PRINCIPAL (TABLA) */
 .main-content {
-  flex-grow: 1; /* Permite que ocupe el espacio restante */
+  flex-grow: 1; 
   display: flex;
   flex-direction: column;
   padding: 20px;
   height: 100%;
 }
 
-/* CARD QUE ENVUELVE LA TABLA */
 .usuarios-card {
   background: #fff;
   border-radius: 12px;
@@ -59,18 +54,16 @@
   padding: 20px;
 }
 
-/* TABLA DE USUARIOS */
 .usuarios-tabla {
   width: 100%;
   height: 100%;
-  border-collapse: collapse; /* Elimina el espacio entre bordes de celdas */
-  table-layout: fixed; /* Hace que todas las celdas tengan el mismo tamaño */
+  border-collapse: collapse; 
+  table-layout: fixed; 
   overflow-y: auto;
 }
 
-/* ENCABEZADO FIJO DE LA TABLA */
 .usuarios-tabla thead {
-  display: table; /* Permite mantener el ancho correcto */
+  display: table; 
   width: 100%;
   table-layout: fixed;
 }
@@ -78,65 +71,59 @@
 .usuarios-tabla th {
   background: var(--primary-color);
   color: white;
-  position: sticky; /* Fija el encabezado al hacer scroll */
+  position: sticky; 
   top: 0;
   z-index: 2;
-  height: 60px; /* Se asegura que todas las celdas tengan la misma altura */
+  height: 60px; 
   text-align: center;
   padding: 12px;
 }
 
 .usuarios-tabla th:first-child,
 .usuarios-tabla td:first-child {
-  width: 50px; /* Hace la columna # más pequeña */
+  width: 50px; 
   min-width: 50px;
   max-width: 50px;
-  text-align: center; /* Asegura que el contenido esté centrado */
+  text-align: center; 
 }
 
-/* CUERPO DE LA TABLA */
 .usuarios-tabla tbody {
-  display: block; /* Se maneja como bloque para definir altura */
-  height: 100%; /* Se expande para ocupar el espacio disponible */
+  display: block; 
+  height: 100%; 
   overflow-y: auto;
 }
 
-/* Mantiene la tabla estructurada para evitar que se deformen las celdas */
 .usuarios-tabla tbody tr {
   display: table;
   width: 100%;
   table-layout: fixed;
-  height: calc(100% / 10); /* Divide la tabla en 10 filas iguales */
-  min-height: 60px; /* Evita que las filas sean demasiado pequeñas */
-  max-height: 80px; /* Evita que sean demasiado grandes */
+  height: calc(100% / 10); 
+  min-height: 60px; 
+  max-height: 80px; 
 }
 
-/* CELDAS DE LA TABLA */
 .usuarios-tabla td {
   border: 1px solid #ccc;
   padding: 12px;
   text-align: center;
   font-size: 1rem;
-  vertical-align: middle; /* Centra el texto verticalmente */
-  white-space: nowrap; /* Evita que el texto se divida en varias líneas */
-  text-overflow: ellipsis; /* Añade puntos suspensivos si el texto es muy largo */
+  vertical-align: middle; 
+  white-space: nowrap; 
+  text-overflow: ellipsis;
   overflow: hidden;
-  height: 100%; /* Mantiene la altura uniforme */
+  height: 100%; 
 }
 
-/* FILAS DE LA TABLA CON COLORES ALTERNADOS */
 .usuarios-tabla tbody tr:nth-child(even) {
   background-color: #f9f9f9;
 }
 
-/* EFECTO HOVER EN FILAS */
 .usuarios-tabla tbody tr:hover {
   background-color: #e0e0f5;
   transform: scale(1.01);
   box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
 }
 
-/* FILAS VACÍAS PARA MANTENER LA ESTRUCTURA CUANDO HAY POCOS USUARIOS */
 .usuarios-tabla tbody:after {
   content: "";
   display: block;
@@ -146,9 +133,7 @@
   background-color: transparent;
 }
 
-/* ============================= */
-/*  ESTILO PARA BOTÓN SELECCIONADO EN FILTRO */
-/* ============================= */
+
 .sidebar button {
   padding: 12px 20px;
   border: none;
@@ -167,17 +152,15 @@
   transform: scale(1.05);
 }
 
-/* Botón activo (cambia el color cuando el filtro está seleccionado) */
 .sidebar button.active-filter {
   background: var(--primary-color, #2F80ED);
   color: #fff;
   font-weight: bold;
   border: 2px solid white;
   transform: scale(1.1);
-  box-shadow: 0px 0px 10px rgba(47, 128, 237, 0.5); /* Efecto de brillo */
+  box-shadow: 0px 0px 10px rgba(47, 128, 237, 0.5); 
 }
 
-/* ESTILOS PARA BOTONES DE EDITAR Y BORRAR */
 .btn-edit, .btn-delete {
   border: none;
   padding: 8px 16px;
@@ -185,7 +168,7 @@
   cursor: pointer;
   font-weight: bold;
   transition: background-color 0.3s ease, transform 0.2s ease;
-  margin: 0 5px; /* Espaciado lateral entre botones */
+  margin: 0 5px; 
 }
 
 .btn-edit {

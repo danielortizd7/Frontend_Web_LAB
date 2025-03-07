@@ -13,7 +13,7 @@ const Register = () => {
     email: "",
     password: "",
     especialidad: "",
-    codigoSeguridad: ""
+    codigoSeguridad: "",
   });
 
   const [error, setError] = useState("");
@@ -53,10 +53,21 @@ const Register = () => {
     console.log("📩 Datos a enviar:", JSON.stringify(formData, null, 2));
 
     try {
+      const token = localStorage.getItem("token"); // Obtener el token si está almacenado
+
+      if (!token) {
+        throw new Error("⚠ No tienes permiso para registrar usuarios. Inicia sesión.");
+      }
+
       const response = await axios.post(
         "https://unificado-u.onrender.com/api/usuarios/registro",
         formData,
-        { headers: { "Content-Type": "application/json" } }
+        {
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`, // Enviar el token
+          },
+        }
       );
 
       console.log("✔ Registro exitoso:", response.data);
@@ -73,10 +84,9 @@ const Register = () => {
         email: "",
         password: "",
         especialidad: "",
-        codigoSeguridad: ""
+        codigoSeguridad: "",
       });
 
-      // Redirigir a la pantalla de login después de 2 segundos
       setTimeout(() => {
         navigate("/login");
       }, 2000);
@@ -85,7 +95,10 @@ const Register = () => {
         "❌ Error en la solicitud:",
         error.response ? error.response.data : error.message
       );
-      if (error.response) {
+
+      if (error.message.includes("No tienes permiso")) {
+        setError(error.message);
+      } else if (error.response) {
         setError(
           error.response.data.message ||
           error.response.data.error ||
@@ -94,6 +107,7 @@ const Register = () => {
       } else {
         setError("⚠ Error de conexión con el servidor.");
       }
+
       setLoading(false);
     }
   };

@@ -6,7 +6,6 @@ import { useNavigate } from "react-router-dom";
 import { FaHome } from "react-icons/fa";
 import Modal from "react-modal";
 
-// Configurar el elemento principal para accesibilidad
 Modal.setAppElement("#root");
 
 const RegistroMuestras = () => {
@@ -22,7 +21,6 @@ const RegistroMuestras = () => {
   const [validacionRealizada, setValidacionRealizada] = useState(false);
   const navigate = useNavigate();
 
-  // Estados para el modal de registro de usuario
   const [registroModalIsOpen, setRegistroModalIsOpen] = useState(false);
   const [nuevoUsuario, setNuevoUsuario] = useState({
     nombre: "",
@@ -87,7 +85,6 @@ const RegistroMuestras = () => {
       return;
     }
     try {
-      // Se usa el endpoint de registro de muestra que no ha cambiado
       const response = await axios.post("https://backendregistromuestra.onrender.com/muestras/registrar", {
         documento,
         fechaHora,
@@ -108,7 +105,6 @@ const RegistroMuestras = () => {
     setLoading(false);
   };
 
-  // Funciones para el modal de registro de usuario
   const handleNuevoUsuarioChange = (e) => {
     const { name, value } = e.target;
     setNuevoUsuario({ ...nuevoUsuario, [name]: value });
@@ -124,7 +120,6 @@ const RegistroMuestras = () => {
         { headers: { Authorization: `Bearer ${token}` } }
       );
       if (response.status === 201) {
-        // Asumimos que la respuesta retorna el usuario registrado en response.data.usuario
         setNombre(response.data.usuario.nombre);
         setUsuarioExiste(true);
         setRegistroModalIsOpen(false);
@@ -249,7 +244,7 @@ const RegistroMuestras = () => {
         </div>
       </div>
 
-      {/* Modal para registrar un nuevo usuario */}
+      {}
       <Modal
         isOpen={registroModalIsOpen}
         onRequestClose={() => setRegistroModalIsOpen(false)}

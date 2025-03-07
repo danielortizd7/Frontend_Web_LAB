@@ -1,6 +1,5 @@
-/* ============================= */
-/*  CONTENEDOR PRINCIPAL         */
-/* ============================= */
+
+
 .home-container {
   display: flex;
   flex-direction: column;
@@ -9,9 +8,8 @@
   background-color: #f8f9fa;
 }
 
-/* ============================= */
-/*  MENÚ SUPERIOR FIJO           */
-/* ============================= */
+
+
 .menu-bar {
   width: 100%;
   display: flex;
@@ -47,11 +45,9 @@
   transform: scale(1.1);
 }
 
-/* ============================= */
-/*  CONTENIDO PRINCIPAL          */
-/* ============================= */
+
 .home-content {
-  margin-top: 80px; /* Para evitar que el contenido quede debajo del menú */
+  margin-top: 80px; 
   text-align: center;
   width: 100%;
 }
@@ -62,9 +58,8 @@ h1 {
   margin-bottom: 20px;
 }
 
-/* ============================= */
-/*  WIDGETS                      */
-/* ============================= */
+
+
 .widgets-container {
   display: flex;
   justify-content: center;
@@ -93,9 +88,6 @@ h1 {
   color: #2F80ED;
 }
 
-/* ============================= */
-/*  RESPONSIVE DESIGN            */
-/* ============================= */
 @media (max-width: 768px) {
   .menu-bar {
     flex-wrap: wrap;

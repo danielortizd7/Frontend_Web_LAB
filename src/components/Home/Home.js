@@ -7,7 +7,6 @@ import "./Home.css";
 const Home = () => {
   const navigate = useNavigate();
 
-  // Estados para almacenar los datos de la API
   const [usuariosTotal, setUsuariosTotal] = useState(0);
   const [muestrasHoy, setMuestrasHoy] = useState(0);
   const [error, setError] = useState("");
@@ -22,7 +21,6 @@ const Home = () => {
       return;
     }
 
-    // Obtener total de usuarios
     axios.get("https://unificado-u.onrender.com/api/usuarios", {
       headers: { Authorization: `Bearer ${token}` }
     })
@@ -38,7 +36,6 @@ const Home = () => {
         }
       });
 
-    // Obtener muestras registradas hoy
     axios.get("https://backendregistromuestra.onrender.com/muestras")
       .then((response) => {
         if (!Array.isArray(response.data)) {
@@ -55,7 +52,7 @@ const Home = () => {
 
   return (
     <div className="home-container">
-      {/* Barra de navegación superior */}
+      {}
       <nav className="menu-bar">
         <button className="menu-item" onClick={() => navigate("/usuarios")}>
           <FaUsers className="menu-icon" />
@@ -83,13 +80,13 @@ const Home = () => {
         </button>
       </nav>
 
-      {/* Contenido principal */}
+      {}
       <div className="home-content">
         <h1>Bienvenido a la plataforma</h1>
 
         {error && <p className="error-message">{error}</p>}
 
-        {/* Widgets informativos con datos de la API */}
+        {}
         <div className="widgets-container">
           <div className="widget">
             <FaUsers className="widget-icon" />
