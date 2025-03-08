@@ -1,123 +1,119 @@
-/* App.css */
-
-/* Estilos generales para el contenedor */
-.App {
+/* Estilo Global */
+body {
   font-family: 'Arial', sans-serif;
-  text-align: center;
-  background-color: #f0f4f8;
-  padding: 30px;
-  border-radius: 8px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  width: 80%;
-  margin: 50px auto;
+  background: #fff; /* Fondo completamente blanco */
+  background-attachment: fixed;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
 }
 
-/* Título principal */
-h1 {
-  font-size: 2.5em;
+/* Contenedor con efecto 3D azul */
+.container {
+  background: rgba(255, 255, 255, 0.9); /* Fondo blanco con leve transparencia */
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 
+    -6px 0 15px rgba(0, 119, 204, 0.6), /* Efecto 3D en el borde izquierdo */
+    6px 0 15px rgba(0, 119, 204, 0.6),  /* Efecto 3D en el borde derecho */
+    0 10px 30px rgba(0, 0, 0, 0.1); /* Sombra general */
+  width: 100%;
+  max-width: 500px;
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+}
+
+/* Estilo del Título */
+h2 {
+  text-align: center;
+  font-size: 30px;
   color: #333;
   margin-bottom: 20px;
+  font-weight: 600;
 }
 
-/* Descripción */
-.descripcion {
-  font-size: 1.2em;
-  color: #555;
-  margin-bottom: 30px;
-}
-
-/* Estilo para el menú desplegable */
-.seleccion {
-  margin-bottom: 20px;
-}
-
-.etiqueta {
-  font-size: 1.2em;
-  color: #444;
-  margin-right: 10px;
-}
-
-.select {
-  padding: 10px;
-  font-size: 1.1em;
-  border-radius: 5px;
-  border: 2px solid #ccc;
-  background-color: #fff;
-  transition: border 0.3s ease;
-}
-
-.select:focus {
-  border-color: #4CAF50;
-  outline: none;
-}
-
-/* Estilo para los botones */
-.botones {
-  margin-top: 20px;
-  margin-bottom: 30px;
-}
-
-.btn {
-  font-size: 1em;
-  padding: 12px 20px;
-  margin: 0 10px;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: transform 0.2s, background-color 0.3s;
-}
-
-.btn:hover {
-  transform: scale(1.1);
-}
-
-.activo {
-  background-color: #4CAF50;
-  color: white;
-}
-
-.inactivo {
-  background-color: #f44336;
-  color: white;
-}
-
-.pendiente {
-  background-color: #ff9800;
-  color: white;
-}
-
-/* Estilo para la muestra con el estado actual */
-.muestra {
-  margin-top: 30px;
-  padding: 20px;
-  font-size: 1.5em;
-  font-weight: bold;
-  color: white;
-  border-radius: 8px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
-
-.activo {
-  background-color: #4CAF50;
-}
-
-.inactivo {
-  background-color: #f44336;
-}
-
-.pendiente {
-  background-color: #ff9800;
-}
-
-/* Estilo para mostrar el estado de la muestra */
-.estado-texto {
-  font-size: 1.6em;
-  font-weight: bold;
+/* Estilo del botón */
+button {
+  background-color: #0077cc;
   color: #fff;
-  text-transform: uppercase;
-  padding: 10px;
-  border-radius: 5px;
-  background-color: rgba(0, 0, 0, 0.3);
-  display: inline-block;
-  margin-top: 10px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+button:hover {
+  background-color: #005fa3;
+  transform: translateY(-2px);
+}
+
+button:active {
+  transform: translateY(1px);
+}
+
+/* Estado Activo */
+.activo {
+  background-color: #0077cc !important;
+}
+
+/* Estado Inactivo */
+.inactivo {
+  background-color: #005fa3 !important;
+}
+
+/* Estado Pendiente */
+.pendiente {
+  background-color: #0099ff !important;
+}
+
+/* Estilo del texto "Estado" con una barra gris */
+.label-estado {
+  display: block;
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 5px;
+  padding-bottom: 5px;
+  border-bottom: 3px solid #888; /* Borde gris visible */
+  width: max-content;
+}
+
+/* Mensajes de error y éxito */
+.alert {
+  background-color: #f44336;
+  color: #fff;
+  padding: 12px;
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+.success {
+  background-color: #0077cc;
+  color: #fff;
+  padding: 12px;
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+/* Efecto de carga en el contenedor */
+.container:hover {
+  transform: scale(1.05);
+}
+
+/* Animación para el formulario */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.container {
+  animation: fadeIn 0.6s ease-in-out;
 }

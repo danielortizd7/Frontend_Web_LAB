@@ -6,7 +6,7 @@ const CambiarEstado = () => {
   const [estado, setEstado] = useState("");
 
   const handleSubmit = async (e) => {
-    e.preventDefault(); // Evitar que la página se recargue
+    e.preventDefault(); 
     if (!idMuestra || !estado) {
       alert("Por favor, ingresa el ID de la muestra y el estado.");
       return;

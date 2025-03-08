@@ -21,7 +21,7 @@ export default function LabDashboard() {
   const [editMode, setEditMode] = useState(null);
   const [editedUser, setEditedUser] = useState({});
   const [sampleIdError, setSampleIdError] = useState(false);
-  const [saveMessage, setSaveMessage] = useState(""); // Estado para mostrar el mensaje de guardado
+  const [saveMessage, setSaveMessage] = useState(""); 
 
   const token = "tu_token_jwt_aqui";
 
@@ -43,18 +43,18 @@ export default function LabDashboard() {
       });
 
       if (response.status === 200) {
-        console.log("Estado actualizado en la API:", response.data);
+        console.log("Estado actualizad API:", response.data);
       } else {
-        console.error("Error al actualizar el estado en la API:", response.data);
+        console.error("Error API:", response.data);
       }
     } catch (error) {
-      console.error("Error al conectar con la API:", error);
+      console.error("Error CN API:", error);
     }
 
     setOpenDropdown(null);
   };
 
-  // Obtener datos del laboratorio desde la API
+  
   const fetchLabData = async () => {
     try {
       const response = await axios.get("https://cambio-estado-api.onrender.com/api/muestras", {
@@ -69,31 +69,31 @@ export default function LabDashboard() {
     }
   };
 
-  // Activar modo de edición
+  
   const handleEditClick = (index) => {
     setEditMode(index);
     setEditedUser({ ...users[index] });
   };
 
-  // Guardar los cambios (validación incluida)
+  
   const handleSaveClick = async (index) => {
-    // Validar que el ID de muestra no esté vacío
+    
     if (!editedUser.sampleId) {
-      setSampleIdError(true); // Mostrar advertencia si el campo está vacío
+      setSampleIdError(true); 
       return;
     }
 
-    // Actualizamos la lista de usuarios con los cambios realizados
+    
     const updatedUsers = [...users];
-    updatedUsers[index] = editedUser; // Actualizamos el usuario editado
-    setUsers(updatedUsers); // Guardamos los cambios en el estado
+    updatedUsers[index] = editedUser; 
+    setUsers(updatedUsers); 
 
     try {
-      // Llamada a la API para guardar los datos actualizados
+     
       const response = await axios.post('https://cambio-estado-api.onrender.com/api/muestras/cambiar-estado', {
         sampleId: editedUser.sampleId,
         laboratoryId: editedUser.laboratoryId,
-        status: editedUser.status, // Incluimos el estado también
+        status: editedUser.status, 
       }, {
         headers: {
           'Content-Type': 'application/json',
@@ -103,20 +103,19 @@ export default function LabDashboard() {
 
       if (response.status === 200) {
         console.log("Datos actualizados en la API:", response.data);
-        setSaveMessage("Datos guardados con éxito."); // Mostrar mensaje de éxito
-      } else {
+        setSaveMessage("Datos guardados con éxito."); 
         console.error("Error al actualizar los datos en la API:", response.data);
-        setSaveMessage("Error al guardar los datos. Intenta de nuevo."); // Mostrar mensaje de error
+        setSaveMessage("Error al guardar los datos. Intenta de nuevo."); 
       }
     } catch (error) {
       console.error("Error al conectar con la API:", error);
       setSaveMessage("Error al guardar los datos. Intenta de nuevo.");
     }
 
-    setEditMode(null); // Salir del modo de edición
-    setSampleIdError(false); // Resetear el error
+    setEditMode(null); 
+    setSampleIdError(false); 
 
-    // Limpiar el mensaje de éxito después de 5 segundos
+   
     setTimeout(() => {
       setSaveMessage("");
     }, 5000);

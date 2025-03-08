@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import "./styles.css";  // Asegúrate de que el archivo styles.css esté en el mismo directorio
-
+import "./styles.css";  
 const ApiTestInterface = () => {
   const [data, setData] = useState([]);
   const [form, setForm] = useState({
@@ -10,13 +9,13 @@ const ApiTestInterface = () => {
     cedula: "",
   });
 
-  // Manejar cambios en el formulario
+  
   const handleChange = (e) => {
     const { name, value } = e.target;
 
-    // Si el campo es idMuestra o cedula, limitamos la longitud
+    
     if (name === "idMuestra" || name === "cedula") {
-      if (value.length <= 10) {  // Limita a 10 caracteres como ejemplo
+      if (value.length <= 10) {  
         setForm({
           ...form,
           [name]: value,
@@ -30,7 +29,7 @@ const ApiTestInterface = () => {
     }
   };
 
-  // Enviar solicitud para cambiar el estado de una muestra
+  
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -43,7 +42,7 @@ const ApiTestInterface = () => {
 
     try {
       const response = await axios.put(
-        "https://cambio-estado-api.onrender.com/api/muestras/cambiar-estado", // Cambia esta URL por la correcta
+        "https://cambio-estado-api.onrender.com/api/muestras/cambiar-estado", 
         {
           idMuestra: form.idMuestra,
           estado: form.estado,
@@ -60,7 +59,7 @@ const ApiTestInterface = () => {
       console.log("🟢 Respuesta del servidor:", response.data);
       setForm({ idMuestra: "", estado: "", cedula: "" });
 
-      // Recargar muestras automáticamente después de actualizar
+      
       fetchMuestras();
     } catch (error) {
       console.error("❌ Error al cambiar el estado:", error.response?.data || error.message);
@@ -72,7 +71,7 @@ const ApiTestInterface = () => {
   const fetchMuestras = async () => {
     try {
       const response = await axios.get(
-        "https://ingreso-resultados.onrender.com/api/resultados/listar" // Cambia esta URL por la correcta
+        "https://ingreso-resultados.onrender.com/api/resultados/listar" 
       );
       console.log("📋 Datos obtenidos:", response.data);
       setData(response.data);
@@ -81,7 +80,7 @@ const ApiTestInterface = () => {
     }
   };
 
-  // Cargar muestras automáticamente al montar el componente
+  
   useEffect(() => {
     fetchMuestras();
   }, []);
@@ -99,7 +98,8 @@ const ApiTestInterface = () => {
             value={form.idMuestra}
             onChange={handleChange}
             required
-            maxLength="5"  // Limita a 10 caracteres
+            maxLength="5"  
+            
           />
         </div>
 
