@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Firmas Digitales</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <h1>Sistema de Firmas Digitales</h1>
+
+    <!-- Búsqueda de muestra -->
+    <div class="seccion">
+        <input type="text" id="idMuestra" placeholder="ID de muestra">
+        <button id="btnBuscar">Buscar Muestra</button>
+        <div id="infoMuestra"></div>
+    </div>
+
+    <!-- Firmas -->
+    <div class="seccion">
+        <div class="firma-container">
+            <h3>Firma Laboratorista</h3>
+            <input type="text" id="cedulaLaboratorista" placeholder="Cédula laboratorista">
+            <canvas id="firmaLab"></canvas>
+            <button class="btn-limpiar" data-canvas="firmaLab">Limpiar</button>
+        </div>
+
+        <div class="firma-container">
+            <h3>Firma Cliente</h3>
+            <input type="text" id="cedulaCliente" placeholder="Cédula cliente (opcional)">
+            <canvas id="firmaCli"></canvas>
+            <button class="btn-limpiar" data-canvas="firmaCli">Limpiar</button>
+        </div>
+    </div>
+
+    <div class="controles">
+        <button id="btnGuardar" class="btn-guardar">Guardar Firmas</button>
+        <button id="btnVisualizar" class="btn-ver">Visualizar</button>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="js/firma.js"></script>
+</body>
+</html>
